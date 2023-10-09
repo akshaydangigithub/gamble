@@ -1,0 +1,161 @@
+.first_main {
+  background-color: royalblue;
+  height: 100vh;
+  padding-top: 4vmax;
+  position: relative;
+}
+.custom_border_row {
+  border: 7px solid rgba(255, 179, 0, 0.919);
+}
+.back_arrow,
+.info_btn {
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.btn_common {
+  background-color: rgba(255, 179, 0, 0.919);
+  padding: 7px 20px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 7px 10px 13px rgba(0, 0, 0, 0.775);
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+.btn_common:active {
+  scale: 1.1;
+}
+.btn_common2 {
+  padding: 4px 30px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  border: 2px solid black;
+  background-color: #fff;
+}
+.btn_common2:active {
+  scale: 1.1;
+}
+.chip_img {
+  height: 70px;
+}
+.num {
+  position: absolute;
+  z-index: 999;
+  color: #fff;
+  margin-top: 10px;
+}
+.slick-slide:not(.slick-center) {
+  transform: scale(0.7);
+  transition: transform 0.5s;
+}
+.rolet_container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.rolet1 {
+  height: 100%;
+  width: 100%;
+}
+.rolet2 {
+  position: absolute;
+  height: 36.5%;
+    animation: rotate 2s linear infinite;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.rolet3 {
+  position: absolute;
+  height: 38.5%;
+}
+.rolet4 {
+  position: absolute;
+  height: 36.5%;
+}
+.rolet5 {
+  position: absolute;
+  height: 36.5%;
+}
+
+/* ========== LEFT PART============ */
+.custom_border {
+  border: 1.3px solid white;
+}
+.custom_border1 {
+  border: 1px solid white;
+}
+.bg-danger-custom {
+  background-color: rgb(255, 37, 37);
+}
+.bg-black-custom {
+  background-color: rgb(32, 32, 32);
+}
+.rotate_text {
+  transform: rotate(-90deg);
+  font-size: 0.75rem;
+  font-weight: bolder;
+}
+.tri_img {
+  height: 90%;
+  width: 90%;
+  object-fit: cover;
+  background-position: center;
+}
+.common_btn2 {
+  padding: 7px 20px;
+  border-radius: 10px;
+  background-color: rgb(87, 210, 255);
+  border: none;
+  font-weight: 500;
+  box-shadow: 7px 10px 13px rgba(0, 0, 0, 0.775);
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+.common_btn2:active {
+  scale: 1.1;
+}
+.custom_col {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 6%;
+  border-radius: 15px;
+}
+.custom_tri_main {
+  position: relative;
+  overflow: hidden;
+}
+.tri1 {
+  height: 100%;
+  width: 70%;
+  position: absolute;
+  top: -35%;
+  left: -25%;
+  transform: rotate(30deg);
+  background-color: #4169e1;
+}
+.tri2 {
+  height: 83%;
+  width: 70%;
+  position: absolute;
+  bottom: -35%;
+  left: -17%;
+  transform: rotate(-30deg);
+  background-color: #4169e1;
+}
