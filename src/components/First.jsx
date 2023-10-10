@@ -23,54 +23,39 @@ const First = () => {
     slidesToShow: 3,
     slidesToScroll: 1,
     centerMode: true,
-    centerPadding: "10px",
+    centerPadding: "0px",
   };
   return (
     <>
-      <div className="first_main px-5">
-        <div className="row custom_border_row py-3 px-4">
+      <div className="first_main px-lg-5 px-4">
+        <div className="row custom_border_row py-3 px-lg-4 ps-3">
           <div className="col">
-            <div className="d-flex align-items-center justify-content-between ">
+            <div className="d-flex align-items-center justify-content-between">
               <div className="back_arrow">
                 <BiArrowBack />
               </div>
-              <div className="btn_common">
-                <h6 className="mb-0">USER ID :- 1234567890</h6>
-              </div>
-              <div className="btn_common">
-                <h6 className="mb-0">POINT :- 100000</h6>
-              </div>
-              <div className="btn_common">
-                <h6 className="mb-0">WIN :- 200000</h6>
-              </div>
-              <div className="btn_common">
-                <h6 className="mb-0">DATE :- 1/3/23</h6>
-              </div>
-              <div className="btn_common">
-                <h6 className="mb-0">TIME :- 02:00</h6>
-              </div>
+              <button className="btn_common">USER ID :- 1234567890</button>
+              <button className="btn_common">POINT :- 100000</button>
+              <button className="btn_common">WIN :- 200000</button>
+              <button className="btn_common">DATE :- 1/3/23</button>
+              <button className="btn_common">TIME :- 02:00</button>
               <div className="info_btn">
                 <AiOutlineInfo />
               </div>
             </div>
           </div>
-          <div className="row mt-5">
-            <div className="col-3">
+          <div className="row mt-lg-5 mt-4">
+            <div className="col-lg-3">
               <div className="d-flex">
                 <button
                   className="btn_common2 me-3"
                   style={{ backgroundColor: "#00dd00" }}
                 >
-                  <h6 className="mb-0">01 : 00</h6>
+                  01 : 00
                 </button>
-                <button className="btn_common2">
-                  <h6 className="mb-0" style={{ fontSize: ".8rem" }}>
-                    total bat <br />
-                    10000
-                  </h6>
-                </button>
+                <button className="btn_common2">total bat 10000</button>
               </div>
-              <div className="mt-4">
+              <div className="mt-4 mb-lg-0 mb-4">
                 <Slider {...settings}>
                   <div className="d-flex align-items-center justify-content-center">
                     <h6 className="num">500</h6>
@@ -101,7 +86,7 @@ const First = () => {
                 </Slider>
               </div>
 
-              <div className="mt-4">
+              <div className="mt-4 mb-md-0 mb-4">
                 <div className="rolet_container">
                   <img src={roulette_1} alt="" className="rolet1" />
                   <img src={roulette_2} alt="" className="rolet2" />
@@ -112,17 +97,17 @@ const First = () => {
               </div>
             </div>
 
-            <div className="col-9 ps-5">
-              <div className="col-11">
+            <div className="col-lg-9 ps-lg-5 ">
+              <div className="col-lg-11">
                 <div className="row">
                   <div className="row ">
                     <div
                       className="col-2 custom_tri_main d-flex align-items-center justify-content-center"
                       style={{ backgroundColor: "#00dd00" }}
                     >
-                      <div className="tri1"></div>
-                      <div className="tri2"></div>
-                      <h3 className="text-white ms-5">0</h3>
+                      <div className="tri1 d-lg-block d-none"></div>
+                      <div className="tri2 d-lg-block d-none"></div>
+                      <h3 className="text-white ms-lg-5">0</h3>
                     </div>
                     <div className="col-9">
                       <div className="row">
@@ -393,7 +378,7 @@ const First = () => {
                   </div>
                 </div>
 
-                <div className="row mt-4">
+                <div className="row mt-5">
                   <div className="col d-flex align-items-center justify-content-between">
                     <button className="common_btn2">TAKE</button>
                     <button className="common_btn2">CANCEL BET</button>
@@ -413,7 +398,7 @@ const First = () => {
                 borderTopLeftRadius: "15px",
                 borderTopRightRadius: "15px",
               }}
-              className="col py-1 bg-danger-custom d-flex align-items-center justify-content-center"
+              className="col py-lg-1 bg-danger-custom d-flex align-items-center justify-content-center"
             >
               <h6 className="text-white">19</h6>
             </div>
@@ -421,7 +406,7 @@ const First = () => {
           <div className="row">
             <div
               style={{ borderTop: "1px solid black" }}
-              className="col py-1 bg-black-custom d-flex align-items-center justify-content-center"
+              className="col py-lg-1 bg-black-custom d-flex align-items-center justify-content-center"
             >
               <h6 className="text-white">35</h6>
             </div>
@@ -429,7 +414,7 @@ const First = () => {
           <div className="row">
             <div
               style={{ borderTop: "1px solid black" }}
-              className="col py-1 bg-danger-custom d-flex align-items-center justify-content-center"
+              className="col py-lg-1 bg-danger-custom d-flex align-items-center justify-content-center"
             >
               <h6 className="text-white">23</h6>
             </div>
@@ -437,7 +422,7 @@ const First = () => {
           <div className="row">
             <div
               style={{ borderTop: "1px solid black" }}
-              className="col py-1 bg-black-custom d-flex align-items-center justify-content-center"
+              className="col py-lg-1 bg-black-custom d-flex align-items-center justify-content-center"
             >
               <h6 className="text-white">17</h6>
             </div>
@@ -445,7 +430,7 @@ const First = () => {
           <div className="row">
             <div
               style={{ backgroundColor: "#00DD00" }}
-              className="col py-1 d-flex align-items-center justify-content-center"
+              className="col py-lg-1 d-flex align-items-center justify-content-center"
             >
               <h6 className="text-white">00</h6>
             </div>
@@ -453,7 +438,7 @@ const First = () => {
           <div className="row">
             <div
               style={{ borderTop: "1px solid black" }}
-              className="col  py-1 bg-danger-custom d-flex align-items-center justify-content-center"
+              className="col  py-lg-1 bg-danger-custom d-flex align-items-center justify-content-center"
             >
               <h6 className="text-white">34</h6>
             </div>
@@ -461,7 +446,7 @@ const First = () => {
           <div className="row">
             <div
               style={{ borderTop: "1px solid black" }}
-              className="col py-1 bg-danger-custom d-flex align-items-center justify-content-center"
+              className="col py-lg-1 bg-danger-custom d-flex align-items-center justify-content-center"
             >
               <h6 className="text-white">5</h6>
             </div>
@@ -469,7 +454,7 @@ const First = () => {
           <div className="row">
             <div
               style={{ borderTop: "1px solid black" }}
-              className="col py-1 bg-black-custom d-flex align-items-center justify-content-center"
+              className="col py-lg-11 bg-black-custom d-flex align-items-center justify-content-center"
             >
               <h6 className="text-white">22</h6>
             </div>
@@ -477,7 +462,7 @@ const First = () => {
           <div className="row">
             <div
               style={{ borderTop: "1px solid black" }}
-              className="col py-1 bg-black-custom d-flex align-items-center justify-content-center"
+              className="col py-lg-1 bg-black-custom d-flex align-items-center justify-content-center"
             >
               <h6 className="text-white">10</h6>
             </div>
@@ -488,12 +473,16 @@ const First = () => {
                 borderBottomLeftRadius: "15px",
                 borderBottomRightRadius: "15px",
               }}
-              className="col py-1 bg-black-custom d-flex align-items-center justify-content-center"
+              className="col py-lg-1 bg-black-custom d-flex align-items-center justify-content-center"
             >
               <h6 className="text-white">2</h6>
             </div>
           </div>
         </div>
+      </div>
+
+      <div className="for_phone">
+        <h1>Please rotate your phone</h1>
       </div>
     </>
   );

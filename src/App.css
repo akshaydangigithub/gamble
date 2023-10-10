@@ -1,6 +1,6 @@
 .first_main {
   background-color: royalblue;
-  height: 100vh;
+  height: auto;
   padding-top: 4vmax;
   position: relative;
 }
@@ -22,9 +22,8 @@
   background-color: rgba(255, 179, 0, 0.919);
   padding: 7px 20px;
   border-radius: 10px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  border: none;
+  font-weight: 500;
   box-shadow: 7px 10px 13px rgba(0, 0, 0, 0.775);
   cursor: pointer;
   transition: all 0.3s ease-in-out;
@@ -33,8 +32,9 @@
   scale: 1.1;
 }
 .btn_common2 {
-  padding: 4px 30px;
+  padding: 4px 20px;
   border-radius: 10px;
+  width: 200px;
   cursor: pointer;
   transition: all 0.3s ease-in-out;
   border: 2px solid black;
@@ -62,13 +62,13 @@
   justify-content: center;
 }
 .rolet1 {
-  height: 100%;
-  width: 100%;
+  height: 300px;
+  width: 300px;
 }
 .rolet2 {
   position: absolute;
-  height: 36.5%;
-    animation: rotate 2s linear infinite;
+  height: 300px;
+  animation: rotate 2s linear infinite;
 }
 
 @keyframes rotate {
@@ -82,15 +82,15 @@
 
 .rolet3 {
   position: absolute;
-  height: 38.5%;
+  height: 300px;
 }
 .rolet4 {
   position: absolute;
-  height: 36.5%;
+  height: 300px;
 }
 .rolet5 {
   position: absolute;
-  height: 36.5%;
+  height: 300px;
 }
 
 /* ========== LEFT PART============ */
@@ -158,4 +158,70 @@
   left: -17%;
   transform: rotate(-30deg);
   background-color: #4169e1;
+}
+
+@media (max-width: 992px) {
+  .btn_common {
+    font-size: 0.6rem;
+    padding: 3px 5px;
+  }
+  .common_btn2 {
+    font-size: 0.8rem;
+    padding: 5px 10px;
+  }
+  .custom_border_row {
+    border: 3px solid rgba(255, 179, 0, 0.919);
+  }
+  .back_arrow,
+  .info_btn {
+    height: 20px;
+    width: 20px;
+  }
+  .btn_common2 {
+    padding: 4px 20px;
+    font-size: 0.7rem;
+    width: auto;
+  }
+  .rolet1 {
+    height: 220px;
+    width: 220px;
+  }
+  .rolet2,
+  .rolet3,
+  .rolet4,
+  .rolet5 {
+    height: 220px;
+  }
+  .rotate_text {
+    font-size: 0.7rem;
+  }
+  .custom_col {
+    position: absolute;
+    top: 36%;
+    transform: translateY(-50%);
+    right: 6%;
+    border-radius: 15px;
+  }
+}
+
+.for_phone {
+  height: 100vh;
+  width: 100vw;
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  display: none;
+}
+
+@media (max-width: 600px) {
+  .first_main {
+    display: none;
+  }
+  .for_phone {
+    display: flex;
+  }
+  .for_phone h1 {
+    color: white;
+  }
 }
