@@ -65,6 +65,8 @@
 .rolet1 {
   height: 300px;
   width: 300px;
+  border-radius: 50%;
+  box-shadow: 5px 0px 50px 10px rgba(255, 255, 255, 0.294);
 }
 .rolet2 {
   position: absolute;
@@ -198,10 +200,14 @@
   }
   .custom_col {
     position: absolute;
-    top: 36%;
+    top: 37%;
     transform: translateY(-50%);
     right: 6%;
     border-radius: 15px;
+  }
+  .tri_img {
+    height: 70%;
+    width: 70%;
   }
 }
 

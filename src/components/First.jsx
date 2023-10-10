@@ -86,7 +86,7 @@ const First = () => {
                 </Slider>
               </div>
 
-              <div className="mt-4 mb-md-0 mb-4">
+              <div className="mt-4 mb-lg-0 mb-4">
                 <div className="rolet_container">
                   <img src={roulette_1} alt="" className="rolet1" />
                   <img src={roulette_2} alt="" className="rolet2" />
