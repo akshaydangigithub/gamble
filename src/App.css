@@ -1,8 +1,9 @@
 .first_main {
   background-color: royalblue;
-  height: auto;
+  min-height: 100vh;
   padding-top: 4vmax;
   position: relative;
+  overflow: hidden;
 }
 .custom_border_row {
   border: 7px solid rgba(255, 179, 0, 0.919);
