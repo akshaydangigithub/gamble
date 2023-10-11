@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useState } from "react";
+import { Table } from "react-bootstrap";
 import { BiArrowBack } from "react-icons/bi";
 import { AiOutlineInfo } from "react-icons/ai";
 import Slider from "react-slick";
@@ -16,6 +17,17 @@ import tri_red from "../assets/tri1-red.png";
 import tri_black from "../assets/tri2-black.png";
 
 const First = () => {
+  const [isSpinning, setIsSpinning] = useState(false);
+
+  const spinRoulette = () => {
+    // Set isSpinning to true to start the animation
+    setIsSpinning(true);
+
+    // Simulate stopping after some time (e.g., 5 seconds)
+    setTimeout(() => {
+      setIsSpinning(false);
+    }, 5000);
+  };
   const settings = {
     dots: false,
     infinite: true,
@@ -27,8 +39,9 @@ const First = () => {
   };
   return (
     <>
-      <div className="first_main px-lg-5 px-4">
+      <div className="first_main px-lg-5 px-4 pt-5">
         <div className="row custom_border_row py-3 px-lg-4 ps-3">
+          {/* for top buttons.... */}
           <div className="col">
             <div className="d-flex align-items-center justify-content-between">
               <div className="back_arrow">
@@ -44,16 +57,21 @@ const First = () => {
               </div>
             </div>
           </div>
+          {/* for top buttons end.... */}
+
           <div className="row mt-lg-5 mt-4">
-            <div className="col-lg-3">
+            {/* for left on the desktop */}
+            <div className="col-lg-3 d-none d-lg-block ">
               <div className="d-flex">
                 <button
-                  className="btn_common2 me-3"
-                  style={{ backgroundColor: "#00dd00" }}
+                  style={{ backgroundColor: "#00DD00" }}
+                  className="btn text-white  me-3"
                 >
-                  01 : 00
+                  01:00
                 </button>
-                <button className="btn_common2">total bat 10000</button>
+                <button style={{ backgroundColor: "white" }} className="btn">
+                  total bat 10000
+                </button>
               </div>
               <div className="mt-4 mb-lg-0 mb-4">
                 <Slider {...settings}>
@@ -87,9 +105,13 @@ const First = () => {
               </div>
 
               <div className="mt-4 mb-lg-0 mb-4">
-                <div className="rolet_container">
+                <div className="rolet_container" onClick={spinRoulette}>
                   <img src={roulette_1} alt="" className="rolet1" />
-                  <img src={roulette_2} alt="" className="rolet2" />
+                  <img
+                    src={roulette_2}
+                    alt=""
+                    className={`rolet2 ${isSpinning ? "spinning" : ""}`}
+                  />
                   <img src={roulette_3} alt="" className="rolet3" />
                   <img src={roulette_4} alt="" className="rolet4" />
                   <img src={roulette_5} alt="" className="rolet5" />
@@ -97,289 +119,686 @@ const First = () => {
               </div>
             </div>
 
-            <div className="col-lg-9 ps-lg-5 ">
-              <div className="col-lg-11">
-                <div className="row">
-                  <div className="row ">
-                    <div
-                      className="col-2 custom_tri_main d-flex align-items-center justify-content-center"
-                      style={{ backgroundColor: "#00dd00" }}
-                    >
-                      <div className="tri1 d-lg-block d-none"></div>
-                      <div className="tri2 d-lg-block d-none"></div>
-                      <h3 className="text-white ms-lg-5">0</h3>
-                    </div>
-                    <div className="col-9">
-                      <div className="row">
-                        <div
-                          style={{ height: "75px" }}
-                          className="col-1 custom_border1 d-flex align-items-center justify-content-center py-3 bg-danger-custom"
-                        >
-                          <h3 className="text-white">3</h3>
-                        </div>
-                        <div className="col-1 custom_border1 d-flex align-items-center justify-content-center py-3 bg-black-custom">
-                          <h3 className="text-white">6</h3>
-                        </div>
-                        <div
-                          style={{ height: "75px" }}
-                          className="col-1 custom_border1 d-flex align-items-center justify-content-center py-3 bg-danger-custom"
-                        >
-                          <h3 className="text-white">9</h3>
-                        </div>
-                        <div
-                          style={{ height: "75px" }}
-                          className="col-1 custom_border1 d-flex align-items-center justify-content-center py-3 bg-danger-custom"
-                        >
-                          <h3 className="text-white">12</h3>
-                        </div>
-                        <div className="col-1 custom_border1 d-flex align-items-center justify-content-center py-3 bg-black-custom">
-                          <h3 className="text-white">15</h3>
-                        </div>
-                        <div
-                          style={{ height: "75px" }}
-                          className="col-1 custom_border1 d-flex align-items-center justify-content-center py-3 bg-danger-custom"
-                        >
-                          <h3 className="text-white">18</h3>
-                        </div>
-                        <div
-                          style={{ height: "75px" }}
-                          className="col-1 custom_border1 d-flex align-items-center justify-content-center py-3 bg-danger-custom"
-                        >
-                          <h3 className="text-white">21</h3>
-                        </div>
-                        <div className="col-1 custom_border1 d-flex align-items-center justify-content-center py-3 bg-black-custom">
-                          <h3 className="text-white">24</h3>
-                        </div>
-                        <div
-                          style={{ height: "75px" }}
-                          className="col-1 custom_border1 d-flex align-items-center justify-content-center py-3 bg-danger-custom"
-                        >
-                          <h3 className="text-white">27</h3>
-                        </div>
-                        <div
-                          style={{ height: "75px" }}
-                          className="col-1 custom_border1 d-flex align-items-center justify-content-center py-3 bg-danger-custom"
-                        >
-                          <h3 className="text-white">30</h3>
-                        </div>
-                        <div className="col-1 custom_border1 d-flex align-items-center justify-content-center py-3 bg-black-custom">
-                          <h3 className="text-white">33</h3>
-                        </div>
-                        <div
-                          style={{ height: "75px" }}
-                          className="col-1 custom_border1 d-flex align-items-center justify-content-center py-3 bg-danger-custom"
-                        >
-                          <h3 className="text-white">36</h3>
-                        </div>
-                      </div>
-                      <div className="row">
-                        <div className="col-1 custom_border1 d-flex align-items-center justify-content-center py-3 bg-black-custom">
-                          <h3 className="text-white">2</h3>
-                        </div>
-                        <div
-                          style={{ height: "75px" }}
-                          className="col-1 custom_border1 d-flex align-items-center justify-content-center py-3 bg-danger-custom"
-                        >
-                          <h3 className="text-white">5</h3>
-                        </div>
-                        <div className="col-1 custom_border1 d-flex align-items-center justify-content-center py-3 bg-black-custom">
-                          <h3 className="text-white">8</h3>
-                        </div>
-                        <div className="col-1 custom_border1 d-flex align-items-center justify-content-center py-3 bg-black-custom">
-                          <h3 className="text-white">11</h3>
-                        </div>
-                        <div
-                          style={{ height: "75px" }}
-                          className="col-1 custom_border1 d-flex align-items-center justify-content-center py-3 bg-danger-custom"
-                        >
-                          <h3 className="text-white">14</h3>
-                        </div>
-                        <div className="col-1 custom_border1 d-flex align-items-center justify-content-center py-3 bg-black-custom">
-                          <h3 className="text-white">17</h3>
-                        </div>
-                        <div className="col-1 custom_border1 d-flex align-items-center justify-content-center py-3 bg-black-custom">
-                          <h3 className="text-white">20</h3>
-                        </div>
-                        <div
-                          style={{ height: "75px" }}
-                          className="col-1 custom_border1 d-flex align-items-center justify-content-center py-3 bg-danger-custom"
-                        >
-                          <h3 className="text-white">23</h3>
-                        </div>
-                        <div className="col-1 custom_border1 d-flex align-items-center justify-content-center py-3 bg-black-custom">
-                          <h3 className="text-white">26</h3>
-                        </div>
-                        <div className="col-1 custom_border1 d-flex align-items-center justify-content-center py-3 bg-black-custom">
-                          <h3 className="text-white">29</h3>
-                        </div>
-                        <div
-                          style={{ height: "75px" }}
-                          className="col-1 custom_border1 d-flex align-items-center justify-content-center py-3 bg-danger-custom"
-                        >
-                          <h3 className="text-white">32</h3>
-                        </div>
-                        <div className="col-1 custom_border1 d-flex align-items-center justify-content-center py-3 bg-black-custom">
-                          <h3 className="text-white">35</h3>
-                        </div>
-                      </div>
-                      <div className="row">
-                        <div
-                          style={{ height: "75px" }}
-                          className="col-1 custom_border1 d-flex align-items-center justify-content-center py-3 bg-danger-custom"
-                        >
-                          <h3 className="text-white">1</h3>
-                        </div>
-                        <div className="col-1 custom_border1 d-flex align-items-center justify-content-center py-3 bg-black-custom">
-                          <h3 className="text-white">4</h3>
-                        </div>
-                        <div
-                          style={{ height: "75px" }}
-                          className="col-1 custom_border1 d-flex align-items-center justify-content-center py-3 bg-danger-custom"
-                        >
-                          <h3 className="text-white">7</h3>
-                        </div>
-                        <div className="col-1 custom_border1 d-flex align-items-center justify-content-center py-3 bg-black-custom">
-                          <h3 className="text-white">10</h3>
-                        </div>
-                        <div className="col-1 custom_border1 d-flex align-items-center justify-content-center py-3 bg-black-custom">
-                          <h3 className="text-white">13</h3>
-                        </div>
-                        <div
-                          style={{ height: "75px" }}
-                          className="col-1 custom_border1 d-flex align-items-center justify-content-center py-3 bg-danger-custom"
-                        >
-                          <h3 className="text-white">15</h3>
-                        </div>
-                        <div
-                          style={{ height: "75px" }}
-                          className="col-1 custom_border1 d-flex align-items-center justify-content-center py-3 bg-danger-custom"
-                        >
-                          <h3 className="text-white">19</h3>
-                        </div>
-                        <div className="col-1 custom_border1 d-flex align-items-center justify-content-center py-3 bg-black-custom">
-                          <h3 className="text-white">22</h3>
-                        </div>
-                        <div
-                          style={{ height: "75px" }}
-                          className="col-1 custom_border1 d-flex align-items-center justify-content-center py-3 bg-danger-custom"
-                        >
-                          <h3 className="text-white">25</h3>
-                        </div>
-                        <div className="col-1 custom_border1 d-flex align-items-center justify-content-center py-3 bg-black-custom">
-                          <h3 className="text-white">28</h3>
-                        </div>
-                        <div className="col-1 custom_border1 d-flex align-items-center justify-content-center py-3 bg-black-custom">
-                          <h3 className="text-white">32</h3>
-                        </div>
-                        <div
-                          style={{ height: "75px" }}
-                          className="col-1 custom_border1 d-flex align-items-center justify-content-center py-3 bg-danger-custom"
-                        >
-                          <h3 className="text-white">34</h3>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="col-1">
-                      <div className="row">
-                        <div
-                          style={{ height: "75px" }}
-                          className="col custom_border1 d-flex align-items-center justify-content-center py-3"
-                        >
-                          <h6 className="text-white rotate_text">2 to 1</h6>
-                        </div>
-                      </div>
-                      <div className="row">
-                        <div
-                          style={{ height: "75px" }}
-                          className="col custom_border1 d-flex align-items-center justify-content-center py-3"
-                        >
-                          <h6 className="text-white rotate_text">2 to 1</h6>
-                        </div>
-                      </div>
-                      <div className="row">
-                        <div
-                          style={{ height: "75px" }}
-                          className="col custom_border1 d-flex align-items-center justify-content-center py-3"
-                        >
-                          <h6 className="text-white rotate_text">2 to 1</h6>
-                        </div>
-                      </div>
-                    </div>
+            {/* mobile view */}
+
+            <div className="row d-flex d-lg-none  align-items-center justify-content-between  my-4">
+              <div className="col-8 px-5">
+                <Slider {...settings}>
+                  <div className="d-flex align-items-center justify-content-center">
+                    <h6 className="num">500</h6>
+                    <img src={chip_black} alt="" className="chip_img" />
                   </div>
 
-                  <div className="row">
-                    <div className="col-2"></div>
-                    <div className="col-9 m-0 p-0 d-flex">
-                      <div className="col-4 m-0 p-0 custom_border overflow-hidden">
-                        <div className="row m-0 p-0">
-                          <div className="col d-flex align-items-center justify-content-center py-2 ">
-                            <h2 className="text-white">1 st 12</h2>
-                          </div>
-                        </div>
-                        <div className="row">
-                          <div
-                            style={{ height: "50px" }}
-                            className="col-6 custom_border d-flex align-items-center justify-content-center pt-2"
-                          >
-                            <h5 className="text-white">1 to 18</h5>
-                          </div>
-                          <div
-                            style={{ height: "50px" }}
-                            className="col-6 custom_border d-flex align-items-center justify-content-center pt-2"
-                          >
-                            <h5 className="text-white">EVEN</h5>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="col-4 m-0 p-0 custom_border overflow-hidden">
-                        <div className="row m-0 p-0">
-                          <div className="col d-flex align-items-center justify-content-center py-2">
-                            <h2 className="text-white">2 nd 12</h2>
-                          </div>
-                        </div>
-                        <div className="row">
-                          <div
-                            style={{ height: "50px" }}
-                            className="col-6 custom_border d-flex align-items-center justify-content-center py-2"
-                          >
-                            <img src={tri_red} alt="" className="tri_img" />
-                          </div>
-                          <div
-                            style={{ height: "50px" }}
-                            className="col-6 custom_border d-flex align-items-center justify-content-center py-2"
-                          >
-                            <img src={tri_black} alt="" className="tri_img" />
-                          </div>
-                        </div>
-                      </div>
-                      <div className="col-4 m-0 p-0 custom_border overflow-hidden">
-                        <div className="row m-0 p-0">
-                          <div className="col d-flex align-items-center justify-content-center py-2">
-                            <h2 className="text-white">1 st 12</h2>
-                          </div>
-                        </div>
-                        <div className="row">
-                          <div
-                            style={{ height: "50px" }}
-                            className="col-6 custom_border d-flex align-items-center justify-content-center pt-2"
-                          >
-                            <h5 className="text-white">ODD</h5>
-                          </div>
-                          <div
-                            style={{ height: "50px" }}
-                            className="col-6 custom_border d-flex align-items-center justify-content-center pt-2"
-                          >
-                            <h5 className="text-white">19 to 36</h5>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="col-1"></div>
+                  <div className="d-flex align-items-center justify-content-center">
+                    <h6 className="num">200</h6>
+                    <img src={chip_orange} alt="" className="chip_img" />
                   </div>
-                </div>
+                  <div className="d-flex align-items-center justify-content-center">
+                    <h6 className="num">100</h6>
+                    <img src={chip_purple} alt="" className="chip_img" />
+                  </div>
+                  <div className="d-flex align-items-center justify-content-center">
+                    <h6 className="num">500</h6>
+                    <img src={chip_black} alt="" className="chip_img" />
+                  </div>
+
+                  <div className="d-flex align-items-center justify-content-center">
+                    <h6 className="num">200</h6>
+                    <img src={chip_orange} alt="" className="chip_img" />
+                  </div>
+                  <div className="d-flex align-items-center justify-content-center">
+                    <h6 className="num">100</h6>
+                    <img src={chip_purple} alt="" className="chip_img" />
+                  </div>
+                </Slider>
 
                 <div className="row mt-5">
-                  <div className="col d-flex align-items-center justify-content-between">
+                  <div
+                    className="col-1 d-flex align-items-center justify-content-center"
+                    style={{
+                      backgroundColor: "rgb(255, 37, 37)",
+                      borderTopLeftRadius: "15px",
+                      borderBottomLeftRadius: "15px",
+                    }}
+                  >
+                    <h6 className="text-white mt-2">19</h6>
+                  </div>
+                  <div
+                    className="col-1 d-flex align-items-center justify-content-center"
+                    style={{
+                      backgroundColor: "rgb(32, 32, 32)",
+                    }}
+                  >
+                    <h6 className="text-white mt-2">35</h6>
+                  </div>
+                  <div
+                    className="col-1 d-flex align-items-center justify-content-center"
+                    style={{
+                      backgroundColor: "rgb(255, 37, 37)",
+                    }}
+                  >
+                    <h6 className="text-white mt-2">23</h6>
+                  </div>
+                  <div
+                    className="col-1 d-flex align-items-center justify-content-center"
+                    style={{
+                      backgroundColor: "rgb(32, 32, 32)",
+                    }}
+                  >
+                    <h6 className="text-white mt-2">17</h6>
+                  </div>
+                  <div
+                    className="col-1 d-flex align-items-center justify-content-center"
+                    style={{
+                      backgroundColor: "#00DD00",
+                    }}
+                  >
+                    <h6 className="text-white mt-2">00</h6>
+                  </div>
+                  <div
+                    className="col-1 d-flex align-items-center justify-content-center"
+                    style={{
+                      backgroundColor: "rgb(255, 37, 37)",
+                    }}
+                  >
+                    <h6 className="text-white mt-2">34</h6>
+                  </div>
+                  <div
+                    className="col-1 d-flex align-items-center justify-content-center"
+                    style={{
+                      backgroundColor: "rgb(255, 37, 37)",
+                    }}
+                  >
+                    <h6 className="text-white mt-2">5</h6>
+                  </div>
+                  <div
+                    className="col-1 d-flex align-items-center justify-content-center"
+                    style={{
+                      backgroundColor: "rgb(32, 32, 32)",
+                    }}
+                  >
+                    <h6 className="text-white mt-2">22</h6>
+                  </div>
+                  <div
+                    className="col-1 d-flex align-items-center justify-content-center"
+                    style={{
+                      backgroundColor: "rgb(32, 32, 32)",
+                    }}
+                  >
+                    <h6 className="text-white mt-2">10</h6>
+                  </div>
+                  <div
+                    className="col-1 d-flex align-items-center justify-content-center"
+                    style={{
+                      backgroundColor: "rgb(32, 32, 32)",
+                      borderTopRightRadius: "15px",
+                      borderBottomRightRadius: "15px",
+                    }}
+                  >
+                    <h6 className="text-white mt-2">2</h6>
+                  </div>
+                </div>
+              </div>
+              <div className="col-4 ps-5 d-flex align-items-center justify-content-end ">
+              <div className="rolet_container" onClick={spinRoulette}>
+                  <img src={roulette_1} alt="" className="rolet1" />
+                  <img
+                    src={roulette_2}
+                    alt=""
+                    className={`rolet2 ${isSpinning ? "spinning" : ""}`}
+                  />
+                  <img src={roulette_3} alt="" className="rolet3" />
+                  <img src={roulette_4} alt="" className="rolet4" />
+                  <img src={roulette_5} alt="" className="rolet5" />
+                </div>
+              </div>
+            </div>
+
+            {/* mobile view end */}
+
+            {/* for left on the desktop end... */}
+
+            {/* for table */}
+
+            <div className="col-lg-8">
+              <div className="row">
+                <div className="col-lg-1"></div>
+                <div className="col-lg-11 p-0">
+                  <Table>
+                    <tbody>
+                      <tr>
+                        <td
+                          className="m-0 px-3 position-relative "
+                          style={{
+                            backgroundColor: "#00DD00",
+                            border: "1.5px solid white",
+                            height: "63px",
+                            width: "43px",
+                          }}
+                          rowSpan={3}
+                        >
+                          <h3
+                            className="text-white"
+                            style={{
+                              position: "absolute",
+                              top: "50%",
+                              left: "50%",
+                              transform: "translate(-50%, -50%)",
+                            }}
+                          >
+                            0
+                          </h3>
+                        </td>
+                        <td
+                          className="m-0 position-relative "
+                          style={{
+                            backgroundColor: "rgb(255, 37, 37)",
+                            border: "1.5px solid white",
+                            height: "63px",
+                            width: "43px",
+                          }}
+                        >
+                          <h3 className="text-white ms-2">1</h3>
+                        </td>
+                        <td
+                          style={{
+                            backgroundColor: "rgb(32, 32, 32)",
+                            border: "1.5px solid white",
+                            height: "63px",
+                            width: "43px",
+                          }}
+                        >
+                          <h3 className="text-white ms-2">6</h3>
+                        </td>
+                        <td
+                          style={{
+                            backgroundColor: "rgb(255, 37, 37)",
+                            border: "1.5px solid white",
+                            height: "63px",
+                            width: "43px",
+                          }}
+                        >
+                          <h3 className="text-white ms-2">9</h3>
+                        </td>
+                        <td
+                          style={{
+                            backgroundColor: "rgb(255, 37, 37)",
+                            border: "1.5px solid white",
+                            height: "63px",
+                            width: "43px",
+                          }}
+                        >
+                          <h3 className="text-white">12</h3>
+                        </td>
+                        <td
+                          style={{
+                            backgroundColor: "rgb(32, 32, 32)",
+                            border: "1.5px solid white",
+                            height: "63px",
+                            width: "43px",
+                          }}
+                        >
+                          <h3 className="text-white">15</h3>
+                        </td>
+                        <td
+                          style={{
+                            backgroundColor: "rgb(255, 37, 37)",
+                            border: "1.5px solid white",
+                            height: "63px",
+                            width: "43px",
+                          }}
+                        >
+                          <h3 className="text-white">18</h3>
+                        </td>
+                        <td
+                          style={{
+                            backgroundColor: "rgb(255, 37, 37)",
+                            border: "1.5px solid white",
+                            height: "63px",
+                            width: "43px",
+                          }}
+                        >
+                          <h3 className="text-white">21</h3>
+                        </td>
+                        <td
+                          style={{
+                            backgroundColor: "rgb(32, 32, 32)",
+                            border: "1.5px solid white",
+                            height: "63px",
+                            width: "43px",
+                          }}
+                        >
+                          <h3 className="text-white">24</h3>
+                        </td>
+                        <td
+                          style={{
+                            backgroundColor: "rgb(255, 37, 37)",
+                            border: "1.5px solid white",
+                            height: "63px",
+                            width: "43px",
+                          }}
+                        >
+                          <h3 className="text-white">27</h3>
+                        </td>
+                        <td
+                          style={{
+                            backgroundColor: "rgb(255, 37, 37)",
+                            border: "1.5px solid white",
+                            height: "63px",
+                            width: "43px",
+                          }}
+                        >
+                          <h3 className="text-white">30</h3>
+                        </td>
+                        <td
+                          style={{
+                            backgroundColor: "rgb(32, 32, 32)",
+                            border: "1.5px solid white",
+                            height: "63px",
+                            width: "43px",
+                          }}
+                        >
+                          <h3 className="text-white">33</h3>
+                        </td>
+                        <td
+                          style={{
+                            backgroundColor: "rgb(255, 37, 37)",
+                            border: "1.5px solid white",
+                            height: "63px",
+                            width: "43px",
+                          }}
+                        >
+                          <h3 className="text-white">35</h3>
+                        </td>
+                        <td
+                          style={{
+                            background: "transparent",
+                            border: "1.5px solid white",
+                            height: "63px",
+                            width: "43px",
+                          }}
+                        >
+                          <p className="text-white rotate_text fw-bold mt-2">
+                            2 to 1
+                          </p>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td
+                          className="m-0 position-relative "
+                          style={{
+                            backgroundColor: "rgb(32, 32, 32)",
+                            border: "1.5px solid white",
+                            height: "63px",
+                            width: "43px",
+                          }}
+                        >
+                          <h3 className="text-white ms-2">1</h3>
+                        </td>
+                        <td
+                          style={{
+                            backgroundColor: "rgb(255, 37, 37)",
+                            border: "1.5px solid white",
+                            height: "63px",
+                            width: "43px",
+                          }}
+                        >
+                          <h3 className="text-white ms-2">6</h3>
+                        </td>
+                        <td
+                          style={{
+                            backgroundColor: "rgb(32, 32, 32)",
+                            border: "1.5px solid white",
+                            height: "63px",
+                            width: "43px",
+                          }}
+                        >
+                          <h3 className="text-white ms-2">9</h3>
+                        </td>
+                        <td
+                          style={{
+                            backgroundColor: "rgb(32, 32, 32)",
+                            border: "1.5px solid white",
+                            height: "63px",
+                            width: "43px",
+                          }}
+                        >
+                          <h3 className="text-white">12</h3>
+                        </td>
+                        <td
+                          style={{
+                            backgroundColor: "rgb(255, 37, 37)",
+                            border: "1.5px solid white",
+                            height: "63px",
+                            width: "43px",
+                          }}
+                        >
+                          <h3 className="text-white">15</h3>
+                        </td>
+                        <td
+                          style={{
+                            backgroundColor: "rgb(32, 32, 32)",
+                            border: "1.5px solid white",
+                            height: "63px",
+                            width: "43px",
+                          }}
+                        >
+                          <h3 className="text-white">18</h3>
+                        </td>
+                        <td
+                          style={{
+                            backgroundColor: "rgb(32, 32, 32)",
+                            border: "1.5px solid white",
+                            height: "63px",
+                            width: "43px",
+                          }}
+                        >
+                          <h3 className="text-white">21</h3>
+                        </td>
+                        <td
+                          style={{
+                            backgroundColor: "rgb(255, 37, 37)",
+                            border: "1.5px solid white",
+                            height: "63px",
+                            width: "43px",
+                          }}
+                        >
+                          <h3 className="text-white">24</h3>
+                        </td>
+                        <td
+                          style={{
+                            backgroundColor: "rgb(32, 32, 32)",
+                            border: "1.5px solid white",
+                            height: "63px",
+                            width: "43px",
+                          }}
+                        >
+                          <h3 className="text-white">27</h3>
+                        </td>
+                        <td
+                          style={{
+                            backgroundColor: "rgb(32, 32, 32)",
+                            border: "1.5px solid white",
+                            height: "63px",
+                            width: "43px",
+                          }}
+                        >
+                          <h3 className="text-white">30</h3>
+                        </td>
+                        <td
+                          style={{
+                            backgroundColor: "rgb(255, 37, 37)",
+                            border: "1.5px solid white",
+                            height: "63px",
+                            width: "43px",
+                          }}
+                        >
+                          <h3 className="text-white">33</h3>
+                        </td>
+                        <td
+                          style={{
+                            backgroundColor: "rgb(32, 32, 32)",
+                            border: "1.5px solid white",
+                            height: "63px",
+                            width: "43px",
+                          }}
+                        >
+                          <h3 className="text-white">35</h3>
+                        </td>
+                        <td
+                          style={{
+                            background: "transparent",
+                            border: "1.5px solid white",
+                            height: "63px",
+                            width: "43px",
+                          }}
+                        >
+                          <p className="text-white rotate_text fw-bold mt-2">
+                            2 to 1
+                          </p>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td
+                          className="m-0 position-relative "
+                          style={{
+                            backgroundColor: "rgb(255, 37, 37)",
+                            border: "1.5px solid white",
+                            height: "63px",
+                            width: "43px",
+                          }}
+                        >
+                          <h3 className="text-white ms-2">1</h3>
+                        </td>
+                        <td
+                          style={{
+                            backgroundColor: "rgb(32, 32, 32)",
+                            border: "1.5px solid white",
+                            height: "63px",
+                            width: "43px",
+                          }}
+                        >
+                          <h3 className="text-white ms-2">6</h3>
+                        </td>
+                        <td
+                          style={{
+                            backgroundColor: "rgb(255, 37, 37)",
+                            border: "1.5px solid white",
+                            height: "63px",
+                            width: "43px",
+                          }}
+                        >
+                          <h3 className="text-white ms-2">9</h3>
+                        </td>
+                        <td
+                          style={{
+                            backgroundColor: "rgb(32, 32, 32)",
+                            border: "1.5px solid white",
+                            height: "63px",
+                            width: "43px",
+                          }}
+                        >
+                          <h3 className="text-white">12</h3>
+                        </td>
+                        <td
+                          style={{
+                            backgroundColor: "rgb(32, 32, 32)",
+                            border: "1.5px solid white",
+                            height: "63px",
+                            width: "43px",
+                          }}
+                        >
+                          <h3 className="text-white">15</h3>
+                        </td>
+                        <td
+                          style={{
+                            backgroundColor: "rgb(255, 37, 37)",
+                            border: "1.5px solid white",
+                            height: "63px",
+                            width: "43px",
+                          }}
+                        >
+                          <h3 className="text-white">18</h3>
+                        </td>
+                        <td
+                          style={{
+                            backgroundColor: "rgb(255, 37, 37)",
+                            border: "1.5px solid white",
+                            height: "63px",
+                            width: "43px",
+                          }}
+                        >
+                          <h3 className="text-white">21</h3>
+                        </td>
+                        <td
+                          style={{
+                            backgroundColor: "rgb(32, 32, 32)",
+                            border: "1.5px solid white",
+                            height: "63px",
+                            width: "43px",
+                          }}
+                        >
+                          <h3 className="text-white">24</h3>
+                        </td>
+                        <td
+                          style={{
+                            backgroundColor: "rgb(255, 37, 37)",
+                            border: "1.5px solid white",
+                            height: "63px",
+                            width: "43px",
+                          }}
+                        >
+                          <h3 className="text-white">27</h3>
+                        </td>
+                        <td
+                          style={{
+                            backgroundColor: "rgb(32, 32, 32)",
+                            border: "1.5px solid white",
+                            height: "63px",
+                            width: "43px",
+                          }}
+                        >
+                          <h3 className="text-white">30</h3>
+                        </td>
+                        <td
+                          style={{
+                            backgroundColor: "rgb(32, 32, 32)",
+                            border: "1.5px solid white",
+                            height: "63px",
+                            width: "43px",
+                          }}
+                        >
+                          <h3 className="text-white">33</h3>
+                        </td>
+                        <td
+                          style={{
+                            backgroundColor: "rgb(255, 37, 37)",
+                            border: "1.5px solid white",
+                            height: "63px",
+                            width: "43px",
+                          }}
+                        >
+                          <h3 className="text-white">35</h3>
+                        </td>
+                        <td
+                          style={{
+                            background: "transparent",
+                            border: "1.5px solid white",
+                            height: "63px",
+                            width: "43px",
+                          }}
+                        >
+                          <p className="text-white rotate_text fw-bold mt-2">
+                            2 to 1
+                          </p>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td
+                          className="border-0"
+                          style={{ background: "transparent" }}
+                        ></td>
+                        <td
+                          colSpan={4}
+                          style={{
+                            background: "transparent",
+                            border: "1.5px solid white",
+                          }}
+                        >
+                          <h4 className="text-white text-center">1 st 12</h4>
+                        </td>
+                        <td
+                          colSpan={4}
+                          style={{
+                            background: "transparent",
+                            border: "1.5px solid white",
+                          }}
+                        >
+                          <h4 className="text-white text-center">1 st 12</h4>
+                        </td>
+                        <td
+                          colSpan={4}
+                          style={{
+                            background: "transparent",
+                            border: "1.5px solid white",
+                          }}
+                        >
+                          <h4 className="text-white text-center">1 st 12</h4>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td
+                          className="border-0"
+                          style={{ background: "transparent" }}
+                        ></td>
+                        <td
+                          style={{
+                            background: "transparent",
+                            border: "1.5px solid white",
+                          }}
+                          colSpan={2}
+                        >
+                          <h6 className="text-white text-center mt-2">
+                            1 to 18
+                          </h6>
+                        </td>
+                        <td
+                          style={{
+                            background: "transparent",
+                            border: "1.5px solid white",
+                          }}
+                          colSpan={2}
+                        >
+                          <h6 className="text-white text-center mt-2">EVEN</h6>
+                        </td>
+                        <td
+                          style={{
+                            background: "transparent",
+                            border: "1.5px solid white",
+                          }}
+                          colSpan={2}
+                        >
+                          <h6 className="text-white text-center">
+                            <img src={tri_red} className="tri_img" alt="" />
+                          </h6>
+                        </td>
+                        <td
+                          style={{
+                            background: "transparent",
+                            border: "1.5px solid white",
+                          }}
+                          colSpan={2}
+                        >
+                          <h6 className="text-white text-center">
+                            {" "}
+                            <img src={tri_black} className="tri_img" alt="" />
+                          </h6>
+                        </td>
+                        <td
+                          style={{
+                            background: "transparent",
+                            border: "1.5px solid white",
+                          }}
+                          colSpan={2}
+                        >
+                          <h6 className="text-white text-center mt-2">
+                            1 to 18
+                          </h6>
+                        </td>
+                        <td
+                          style={{
+                            background: "transparent",
+                            border: "1.5px solid white",
+                          }}
+                          colSpan={2}
+                        >
+                          <h6 className="text-white text-center mt-2">EVEN</h6>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </Table>
+
+                  <div className="col mt-4 d-flex align-items-center justify-content-between">
                     <button className="common_btn2">TAKE</button>
                     <button className="common_btn2">CANCEL BET</button>
                     <button className="common_btn2">SPACIFIC CANCEL</button>
@@ -389,100 +808,151 @@ const First = () => {
                 </div>
               </div>
             </div>
-          </div>
-        </div>
-        <div className="col custom_col">
-          <div className="row">
-            <div
-              style={{
-                borderTopLeftRadius: "15px",
-                borderTopRightRadius: "15px",
-              }}
-              className="col py-lg-1 bg-danger-custom d-flex align-items-center justify-content-center"
-            >
-              <h6 className="text-white">19</h6>
-            </div>
-          </div>
-          <div className="row">
-            <div
-              style={{ borderTop: "1px solid black" }}
-              className="col py-lg-1 bg-black-custom d-flex align-items-center justify-content-center"
-            >
-              <h6 className="text-white">35</h6>
-            </div>
-          </div>
-          <div className="row">
-            <div
-              style={{ borderTop: "1px solid black" }}
-              className="col py-lg-1 bg-danger-custom d-flex align-items-center justify-content-center"
-            >
-              <h6 className="text-white">23</h6>
-            </div>
-          </div>
-          <div className="row">
-            <div
-              style={{ borderTop: "1px solid black" }}
-              className="col py-lg-1 bg-black-custom d-flex align-items-center justify-content-center"
-            >
-              <h6 className="text-white">17</h6>
-            </div>
-          </div>
-          <div className="row">
-            <div
-              style={{ backgroundColor: "#00DD00" }}
-              className="col py-lg-1 d-flex align-items-center justify-content-center"
-            >
-              <h6 className="text-white">00</h6>
-            </div>
-          </div>
-          <div className="row">
-            <div
-              style={{ borderTop: "1px solid black" }}
-              className="col  py-lg-1 bg-danger-custom d-flex align-items-center justify-content-center"
-            >
-              <h6 className="text-white">34</h6>
-            </div>
-          </div>
-          <div className="row">
-            <div
-              style={{ borderTop: "1px solid black" }}
-              className="col py-lg-1 bg-danger-custom d-flex align-items-center justify-content-center"
-            >
-              <h6 className="text-white">5</h6>
-            </div>
-          </div>
-          <div className="row">
-            <div
-              style={{ borderTop: "1px solid black" }}
-              className="col py-lg-11 bg-black-custom d-flex align-items-center justify-content-center"
-            >
-              <h6 className="text-white">22</h6>
-            </div>
-          </div>
-          <div className="row">
-            <div
-              style={{ borderTop: "1px solid black" }}
-              className="col py-lg-1 bg-black-custom d-flex align-items-center justify-content-center"
-            >
-              <h6 className="text-white">10</h6>
-            </div>
-          </div>
-          <div className="row">
-            <div
-              style={{
-                borderBottomLeftRadius: "15px",
-                borderBottomRightRadius: "15px",
-              }}
-              className="col py-lg-1 bg-black-custom d-flex align-items-center justify-content-center"
-            >
-              <h6 className="text-white">2</h6>
+
+            {/* for table end */}
+
+            <div className="col-1 d-none d-lg-block ">
+              <div className="row">
+                <div className="px-3">
+                  <div
+                    style={{
+                      borderTopLeftRadius: "15px",
+                      borderTopRightRadius: "15px",
+                      backgroundColor: "rgb(255, 37, 37)",
+                      borderBottom: "1.5px solid black",
+                    }}
+                    className="col d-flex align-items-center justify-content-center"
+                  >
+                    <h6 className="text-white mt-2">19</h6>
+                  </div>
+                </div>
+              </div>
+              <div className="row">
+                <div className="px-3">
+                  <div
+                    style={{
+                      backgroundColor: "rgb(32, 32, 32)",
+                      borderBottom: "1.5px solid black",
+                    }}
+                    className="col d-flex align-items-center justify-content-center"
+                  >
+                    <h6 className="text-white mt-2">35</h6>
+                  </div>
+                </div>
+              </div>
+              <div className="row">
+                <div className="px-3">
+                  <div
+                    style={{
+                      backgroundColor: "rgb(255, 37, 37)",
+                      borderBottom: "1.5px solid black",
+                    }}
+                    className="col d-flex align-items-center justify-content-center"
+                  >
+                    <h6 className="text-white mt-2">23</h6>
+                  </div>
+                </div>
+              </div>
+              <div className="row">
+                <div className="px-3">
+                  <div
+                    style={{
+                      backgroundColor: "rgb(32, 32, 32)",
+                      borderBottom: "1.5px solid black",
+                    }}
+                    className="col d-flex align-items-center justify-content-center"
+                  >
+                    <h6 className="text-white mt-2">17</h6>
+                  </div>
+                </div>
+              </div>
+              <div className="row">
+                <div className="px-3">
+                  <div
+                    style={{
+                      backgroundColor: "#00DD00",
+                      borderBottom: "1.5px solid black",
+                    }}
+                    className="col d-flex align-items-center justify-content-center"
+                  >
+                    <h6 className="text-white mt-2">00</h6>
+                  </div>
+                </div>
+              </div>
+              <div className="row">
+                <div className="px-3">
+                  <div
+                    style={{
+                      backgroundColor: "rgb(255, 37, 37)",
+                      borderBottom: "1.5px solid black",
+                    }}
+                    className="col d-flex align-items-center justify-content-center"
+                  >
+                    <h6 className="text-white mt-2">34</h6>
+                  </div>
+                </div>
+              </div>
+              <div className="row">
+                <div className="px-3">
+                  <div
+                    style={{
+                      backgroundColor: "rgb(255, 37, 37)",
+                      borderBottom: "1.5px solid black",
+                    }}
+                    className="col d-flex align-items-center justify-content-center"
+                  >
+                    <h6 className="text-white mt-2">5</h6>
+                  </div>
+                </div>
+              </div>
+
+              <div className="row">
+                <div className="px-3">
+                  <div
+                    style={{
+                      backgroundColor: "rgb(32, 32, 32)",
+                      borderBottom: "1.5px solid black",
+                    }}
+                    className="col d-flex align-items-center justify-content-center"
+                  >
+                    <h6 className="text-white mt-2">22</h6>
+                  </div>
+                </div>
+              </div>
+              <div className="row">
+                <div className="px-3">
+                  <div
+                    style={{
+                      backgroundColor: "rgb(32, 32, 32)",
+                      borderBottom: "1.5px solid black",
+                    }}
+                    className="col d-flex align-items-center justify-content-center"
+                  >
+                    <h6 className="text-white mt-2">10</h6>
+                  </div>
+                </div>
+              </div>
+              <div className="row">
+                <div className="px-3">
+                  <div
+                    style={{
+                      backgroundColor: "rgb(32, 32, 32)",
+                      borderBottomLeftRadius: "15px",
+                      borderBottomRightRadius: "15px",
+                    }}
+                    className="col d-flex align-items-center justify-content-center"
+                  >
+                    <h6 className="text-white mt-2">2</h6>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
 
       <div className="for_phone">
-        <h1>Please rotate your phone</h1>
+        <h3>Please rotate your phone</h3>
       </div>
     </>
   );
